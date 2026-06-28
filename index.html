@@ -274,8 +274,8 @@
   .member .ds{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.45}
 
   .ulist{list-style:none;display:flex;flex-direction:column;gap:11px}
-  .ulist li{display:flex;gap:12px;font-size:16.5px;color:var(--muted);line-height:1.45}
-  .ulist li::before{content:"→";color:var(--gold);font-weight:700;flex-shrink:0}
+  .ulist li{position:relative;padding-left:27px;font-size:16.5px;color:var(--muted);line-height:1.45}
+  .ulist li::before{content:"→";position:absolute;left:0;top:0;color:var(--gold);font-weight:700}
   .ulist li b{color:var(--text)}
 
   .twocol{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
@@ -675,7 +675,7 @@
       <h2 class="anim" style="margin-bottom:4px">Ya somos reales, y el producto de cobros está validado.</h2>
       <p class="lead anim" style="margin-bottom:26px">No es una idea en PowerPoint: hay locales operando y dinero moviéndose todos los días.</p>
       <div class="grid g4 anim" style="margin-bottom:30px">
-        <div class="card stat"><div class="n g count" data-to="9">0</div><div class="l">locales en producción</div></div>
+        <div class="card stat"><div class="n g count" data-to="14">0</div><div class="l">locales en producción</div></div>
         <div class="card stat"><div class="n count" data-to="15000" data-prefix="+" data-sep=".">+0</div><div class="l">turnos gestionados</div></div>
         <div class="card stat"><div class="n gr">0</div><div class="l">churn de locales</div></div>
         <div class="card stat"><div class="n g">Live</div><div class="l">cobros con Mercado Pago</div></div>
@@ -683,7 +683,7 @@
       <div class="anim">
         <div class="label-sm">Proyección de locales activos</div>
         <div class="bars" style="height:170px;margin-top:14px">
-          <div class="col"><div class="bar" style="--h:8%"><span class="v">9</span></div><div class="yr">Hoy</div></div>
+          <div class="col"><div class="bar" style="--h:10%"><span class="v">14</span></div><div class="yr">Hoy</div></div>
           <div class="col"><div class="bar" style="--h:20%"><span class="v">350</span></div><div class="yr">Año 1</div></div>
           <div class="col"><div class="bar" style="--h:42%"><span class="v">2.500</span></div><div class="yr">Año 2</div></div>
           <div class="col"><div class="bar" style="--h:70%"><span class="v">9.000</span></div><div class="yr">Año 3</div></div>
