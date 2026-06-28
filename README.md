@@ -28,7 +28,7 @@ El deck es un único archivo HTML autocontenido (sin build step).
 
 ## 👥 Equipo
 
-Luciano Esteban (CEO) · Francisco Guarrera (CTO) · Nicolás Morteo (CPO) ·
+Luciano Esteban (Founder · CEO) · Francisco Guarrera (CTO) · Nicolás Morteo (CPO) ·
 Lucas Pittner (Head of AI · CDO) · Ulises Gallardo (CFO · Head of Risk) · Nicolás Grosso (CMO · Head of Growth)
 
 ---
