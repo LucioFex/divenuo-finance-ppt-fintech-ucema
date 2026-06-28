@@ -160,7 +160,7 @@
   @media(max-width:980px){.role{display:none}}
 
   /* ============ ESPECÍFICOS ============ */
-  .stat .n{font-size:clamp(30px,4vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1}
+  .stat .n{font-size:clamp(30px,4vw,50px);font-weight:900;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
   .stat .n.g{color:var(--gold)}
   .stat .n.gr{color:var(--green-2)}
   .stat .l{font-size:14.5px;color:var(--muted);margin-top:6px}
@@ -655,10 +655,10 @@
         <div class="anim">
           <div class="label-sm">Unit economics (objetivo, ilustrativo)</div>
           <div class="grid g2" style="margin-top:10px">
-            <div class="card stat"><div class="n g count" data-to="1100" data-prefix="~US$ " data-sep=".">~US$ 0</div><div class="l">ARPU maduro / local / año</div></div>
-            <div class="card stat"><div class="n count" data-to="80" data-prefix="US$ ">US$ 0</div><div class="l">CAC (referido + inside sales)</div></div>
-            <div class="card stat"><div class="n gr">&gt; 4x</div><div class="l">LTV / CAC</div></div>
-            <div class="card stat"><div class="n">&lt; 8 m</div><div class="l">Payback</div></div>
+            <div class="card stat"><div class="n g count" data-to="1100" data-prefix="~US$ " data-sep="." style="font-size:clamp(24px,2.9vw,34px);white-space:nowrap">~US$ 0</div><div class="l">ARPU maduro / local / año</div></div>
+            <div class="card stat"><div class="n count" data-to="80" data-prefix="US$ " style="font-size:clamp(24px,2.9vw,34px);white-space:nowrap">US$ 0</div><div class="l">CAC (referido + inside sales)</div></div>
+            <div class="card stat"><div class="n gr" style="font-size:clamp(24px,2.9vw,34px);white-space:nowrap">&gt; 4x</div><div class="l">LTV / CAC</div></div>
+            <div class="card stat"><div class="n" style="font-size:clamp(24px,2.9vw,34px);white-space:nowrap">&lt; 8 m</div><div class="l">Payback</div></div>
           </div>
         </div>
       </div>
