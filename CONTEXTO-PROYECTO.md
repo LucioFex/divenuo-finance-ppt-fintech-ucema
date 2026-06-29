@@ -1,6 +1,6 @@
 # diVenuo Finance — Contexto del proyecto (handoff)
 
-> Documento de continuidad para retomar el trabajo en otra sesión. Última actualización: 2026-06-23.
+> Documento de continuidad para retomar el trabajo en otra sesión. Última actualización: 2026-06-28.
 
 ## 1. Qué es este proyecto
 
@@ -103,7 +103,8 @@ Decisiones del usuario (todas las opciones recomendadas):
 ## 7. Pendientes / próximos pasos
 
 - [x] **Reemplazar `ALUMNO1…ALUMNO6` por nombres reales** (HECHO 2026-06-26): Luciano Esteban (CEO) · Francisco Guarrera (CTO) · Nicolás Morteo (CPO) · Lucas Pittner (Head of AI·CDO) · Ulises Gallardo (CFO·Head of Risk) · Nicolás Grosso (CMO·Head of Growth). Aplicado en los 3 lugares (chip slide 1, cards slide 2 con iniciales en `.av`, array `roles` del script).
-- [ ] **Sumar fotos de perfil reales** del equipo: dentro de cada `.av` de la slide 2 agregar `<img src="...">` (el CSS ya lo soporta: `.member .av img` hace object-fit cover).
+- [x] **Sumar fotos de perfil reales** del equipo (HECHO): 6 fotos 300×300 embebidas como data-URI en la slide 2.
+- [x] **Justificar las fuentes de los datos** (HECHO 2026-06-28, commit `db36b7b`): fuente sutil abajo de cada slide del deck + sección "Fuentes y bibliografía" (4 págs) anexada al guión PDF (ahora 21 págs) + `fuentes-bibliografia.html` versionado y regenerable. Detalle en la sección 10.
 - [ ] (Opcional) Ensayar el reparto de quién dice cada slide según las etiquetas de rol.
 - [ ] (Opcional) Ajustes finos de copy/números si el profe pide algo específico.
 
@@ -119,10 +120,19 @@ Decisiones del usuario (todas las opciones recomendadas):
    - **Fix bug count-up reduced-motion:** `countUp(el, instant)` — bajo `prefers-reduced-motion` (entorno de Lucio + proyectores) saltaba a "0" en Tracción/Modelo; ahora muestra el valor final (9 locales · +15.000 turnos · ~US$ 1.100 ARPU · US$ 80 CAC). CRÍTICO porque se presenta así.
    - **Portada reforzada con ancla de comparable:** línea editorial con acento dorado izquierdo — "Lo que *Toast* hizo por los restaurantes y *Shopify* por el comercio — para la *economía de turnos*." (engancha desde el slide 1 y prepara la #10).
    - Renumeración foots 11→17, array `roles` a 17 entradas, contador `tot` 16→17. Todo verificado renderizando con Chrome headless (`scratchpad/shot.sh`) e iterando sobre screenshots.
+7. v5 (2026-06-28) — **justificación de fuentes de los datos** (commit `db36b7b`, pusheado a Pages). Ver sección 10.
 
 ## 9. Cómo previsualizar / iterar visualmente
 - Abrir en navegador: `xdg-open index.html` (o `index.html#10` para saltar a una slide).
 - Screenshots headless para iterar sin abrir el navegador: `scratchpad/shot.sh <slide#> <nombre>` usa `google-chrome-stable --headless=new --force-prefers-reduced-motion` (1600×900). Útil además para validar el estado reduced-motion (el real de Lucio).
+- **Regenerar la bibliografía del guión:** editar `fuentes-bibliografia.html` → `google-chrome-stable --headless=new --no-pdf-header-footer --print-to-pdf=fuentes.pdf "file://.../fuentes-bibliografia.html"` → `pdfunite <guión-17pp> fuentes.pdf Guion-...pdf`. (El guión base de 17 págs se regenera de su propio HTML, que NO está versionado; conservar un PDF base.)
+
+## 10. Justificación de fuentes (v5, 2026-06-28)
+Todo dato del pitch quedó respaldado. Cifras externas verificadas con WebSearch.
+- **Deck (`index.html`):** clase CSS `.src` (abajo-derecha, sutil, en cursiva, no pisa la etiqueta de rol vertical; degrada en <980px). Una línea de fuente bajo cada slide con datos (4-6, 8-16), categorizando: *dato propio* / *fuente pública* / *estimación propia*. Se ajustaron 2 cifras de comparables a valores públicos actuales: Toast `~US$13.000M`→`~US$15.000M (jun 2026)`; Square `Millones de PyMEs`→`+US$32.000M prestados desde 2014`.
+- **Guión PDF:** +4 págs "Fuentes y bibliografía" anexadas con `pdfunite` (17→**21 págs**). Contenido: portada de sección oscura (estilo cover) + nota metodológica (3 tipos de dato) + mapa fuente-por-slide + **14 referencias** con enlaces: A) comparables [1-6] · B) mercado/brecha MIPYME [7-10: IFC ~87%, BID US$210-250B, INEGI ~190k MX, INET +40k AR] · C) medios de pago/embedded finance [11-13: BCRA Transferencias 3.0, embedded finance LatAm, Pomelo] · D) datos propios diVenuo [14].
+- **Fuente regenerable versionada:** `fuentes-bibliografia.html` (A4, Work Sans + Zilla Slab en headings). Corrige el problema histórico de que el `guion.html` original se perdió (solo vivía en scratchpad).
+- **Criterio:** TAM/SAM/SOM y proyecciones siguen etiquetados como *estimación propia ilustrativa* (lo honesto académicamente); las fuentes públicas anclan orden de magnitud y contexto, no "demuestran" lo proyectado.
 
 ---
 *Para retomar: abrir `index.html` en el navegador (o `xdg-open index.html`). Memoria de Claude relacionada: `project-divenuo-finance-tp`.*
