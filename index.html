@@ -345,6 +345,84 @@
   .browser img{display:block;width:100%;height:auto}
   .phone{width:clamp(162px,15.5vw,200px);border:6px solid #1c1822;border-radius:28px;overflow:hidden;background:#000;box-shadow:0 34px 80px -34px rgba(0,0,0,.75)}
   .phone img{display:block;width:100%;height:auto}
+
+  /* ===== SLIDE 08 · Producto (potenciado: cliente -> capa diVenuo -> dueno) ===== */
+  .p8-stage{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2.2vw,34px);margin-top:18px}
+  .p8-side{display:flex;flex-direction:column;align-items:center;gap:15px}
+  .p8-side figcaption{font-size:13px;color:var(--muted);text-align:center;line-height:1.45}
+  .p8-side figcaption b{color:var(--gold-soft);font-weight:700}
+
+  /* --- telefono del cliente --- */
+  .p8-phone{width:clamp(248px,21vw,286px);background:#08060c;border-radius:42px;padding:9px;position:relative;
+    box-shadow:0 54px 110px -36px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.05),inset 0 0 0 2px rgba(255,255,255,.03)}
+  .p8-phone .island{position:absolute;top:21px;left:50%;transform:translateX(-50%);width:84px;height:21px;background:#000;border-radius:999px;z-index:6}
+  .p8-screen{background:var(--cream);border-radius:34px;overflow:hidden;position:relative}
+  .p8-screen::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:7;
+    background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.55) 50%,transparent 58%);background-size:280% 100%;background-position:210% 0}
+  .slide.active .p8-screen::after{animation:p8sweep 5.5s ease-in-out 1s infinite}
+  @keyframes p8sweep{0%{background-position:210% 0}22%,100%{background-position:-120% 0}}
+  .p8-ph-top{background:linear-gradient(165deg,#0c6e31,#083f1d);color:#fff;padding:30px 20px 22px}
+  .p8-statusbar{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:700;opacity:.92;margin-bottom:18px}
+  .p8-statusbar .p8-sig{letter-spacing:1px;font-size:9px}
+  .p8-ph-kick{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.82}
+  .p8-ph-title{font-weight:800;font-size:18px;margin-top:5px}
+  .p8-ph-body{padding:15px 15px 18px}
+  .p8-row{background:#fff;border:1px solid rgba(29,24,33,.1);border-radius:13px;padding:12px 14px;margin-bottom:9px;
+    font-size:13px;display:flex;justify-content:space-between;align-items:center;color:var(--ink-2)}
+  .p8-row b{color:var(--ink-2);font-weight:800}
+  .p8-cta{background:var(--green);color:#fff;text-align:center;border-radius:13px;padding:13px;font-size:14px;font-weight:700;margin-top:4px;
+    box-shadow:0 14px 28px -10px rgba(10,92,41,.7)}
+
+  /* --- capa diVenuo: flujo en el medio --- */
+  .p8-flow{display:flex;flex-direction:column;align-items:center;gap:16px;width:clamp(116px,12vw,168px);align-self:center}
+  .p8-flow .ftop{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2)}
+  .p8-track{position:relative;width:100%;height:2px;border-radius:2px;
+    background:linear-gradient(90deg,rgba(217,180,74,0),rgba(217,180,74,.55),rgba(217,180,74,0))}
+  .p8-track .node{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;
+    background:radial-gradient(circle at 32% 28%,var(--ink-4),var(--ink));border:1px solid rgba(217,180,74,.55);
+    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;z-index:2;
+    box-shadow:0 0 28px rgba(217,180,74,.4),inset 0 0 14px rgba(217,180,74,.15)}
+  .p8-track .node b{color:var(--gold)}
+  .p8-coin{position:absolute;top:50%;left:-8%;transform:translateY(-50%);width:25px;height:25px;border-radius:50%;
+    background:radial-gradient(circle at 35% 28%,var(--gold-2),var(--gold));color:var(--ink);font-weight:900;font-size:12px;
+    display:flex;align-items:center;justify-content:center;z-index:3;box-shadow:0 0 16px rgba(217,180,74,.75)}
+  .slide.active .p8-coin{animation:p8coin 3.6s cubic-bezier(.55,.1,.3,1) infinite}
+  @keyframes p8coin{0%{left:-8%;opacity:0;transform:translateY(-50%) scale(.7)}
+    12%{opacity:1;transform:translateY(-50%) scale(1)}
+    46%,54%{left:calc(50% - 12px)}
+    88%{opacity:1}100%{left:108%;opacity:0;transform:translateY(-50%) scale(.7)}}
+  .p8-pills{display:flex;flex-direction:column;gap:7px;align-items:center}
+  .p8-pill{font-size:11px;font-weight:600;color:var(--gold-soft);border:1px solid rgba(217,180,74,.32);
+    background:rgba(217,180,74,.08);border-radius:999px;padding:4px 14px}
+
+  /* --- cockpit del dueno --- */
+  .p8-dash{width:clamp(320px,29vw,408px);background:linear-gradient(180deg,#fff,#eef0f7);border-radius:22px;color:var(--ink-2);padding:20px 20px 18px;
+    box-shadow:0 54px 110px -36px rgba(0,0,0,.75);border:1px solid rgba(0,0,0,.06)}
+  .p8-dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+  .p8-dh .t{font-weight:800;font-size:17px}
+  .p8-live{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:800;letter-spacing:.1em;
+    color:#0a7a38;background:rgba(10,122,56,.1);border:1px solid rgba(10,122,56,.25);border-radius:999px;padding:4px 10px}
+  .p8-live i{width:7px;height:7px;border-radius:50%;background:#16a34a;animation:p8pulse 2s infinite}
+  @keyframes p8pulse{0%{box-shadow:0 0 0 0 rgba(22,163,74,.55)}70%{box-shadow:0 0 0 8px rgba(22,163,74,0)}100%{box-shadow:0 0 0 0 rgba(22,163,74,0)}}
+  .p8-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+  .p8-kpi{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:13px;padding:12px 11px}
+  .p8-kpi .v{font-weight:900;font-size:21px;font-variant-numeric:tabular-nums}
+  .p8-kpi .k{font-size:10.5px;color:#6b6577;margin-top:3px}
+  .p8-sparkwrap{display:flex;align-items:center;gap:11px;margin-bottom:13px;padding:0 2px}
+  .p8-spark{display:flex;align-items:flex-end;gap:3px;height:26px;flex:1}
+  .p8-spark i{flex:1;background:linear-gradient(180deg,var(--green-2),rgba(39,179,104,.28));border-radius:2px;transform-origin:bottom;
+    transform:scaleY(0)}
+  .slide.active .p8-spark i{animation:p8bar .7s var(--ease) both}
+  @keyframes p8bar{to{transform:scaleY(1)}}
+  .p8-sparklbl{font-size:10px;color:#8a8594;white-space:nowrap}
+  .p8-copilot{background:var(--ink-2);border-radius:16px;padding:14px;color:#fff;position:relative;overflow:hidden}
+  .p8-copilot .lbl{display:flex;align-items:center;gap:9px;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:11px}
+  .p8-copilot .av{width:23px;height:23px;border-radius:7px;background:radial-gradient(circle at 30% 28%,var(--gold-2),var(--gold));
+    color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:13px;box-shadow:0 0 14px rgba(217,180,74,.6)}
+  .p8-copilot .q{background:rgba(255,255,255,.08);border-radius:11px;padding:10px 13px;font-size:12.5px;margin-bottom:9px}
+  .p8-copilot .a{background:rgba(217,180,74,.16);border:1px solid rgba(217,180,74,.32);border-radius:11px;padding:11px 13px;font-size:12.5px;line-height:1.5;color:var(--gold-soft)}
+  .p8-copilot .a b{color:#fff;font-weight:800}
+  .p8-copilot .conf{display:block;margin-top:9px;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.02em}
 </style>
 </head>
 <body>
@@ -520,39 +598,57 @@
     <div class="glow glow-gold" style="width:420px;height:420px;top:-120px;right:-140px"></div>
     <div class="inner">
       <div class="kicker anim">El producto</div>
-      <h2 class="anim" style="margin-bottom:34px">Una sola app: el cliente reserva y paga. El dueño cobra y decide.</h2>
-      <div class="twocol" style="grid-template-columns:1.35fr .85fr;align-items:center">
-        <div class="anim" style="display:flex;gap:24px;justify-content:center;align-items:flex-start;flex-wrap:wrap">
-          <div class="mock-phone float">
-            <div class="ph-top">
-              <div style="font-size:11px;letter-spacing:.1em;opacity:.85;text-transform:uppercase">Reservá tu turno</div>
-              <div style="font-weight:800;font-size:18px;margin-top:4px">Barbería · Hoy 18:30</div>
-            </div>
-            <div class="ph-body">
-              <div class="ph-row"><span>Corte + Barba</span><b>$24.000</b></div>
-              <div class="ph-row"><span>Seña <span class="pay-badge">MP</span></span><b>$8.000</b></div>
-              <div class="ph-row"><span>3 cuotas s/interés</span><span class="pay-badge">BNPL</span></div>
-              <div class="ph-cta">Confirmar y pagar seña</div>
+      <h2 class="anim" style="margin-bottom:8px;max-width:26ch">Una sola app. <span class="em-g">Dos lados</span>. <span class="shine">diVenuo</span> en el medio.</h2>
+      <p class="lead anim" style="max-width:62ch;margin-bottom:8px">El cliente reserva y paga. El dueño cobra, decide y accede a capital. Todo el dinero y el dato pasan por nuestra capa.</p>
+      <div class="p8-stage anim">
+
+        <figure class="p8-side">
+          <div class="p8-phone float">
+            <div class="island"></div>
+            <div class="p8-screen">
+              <div class="p8-ph-top">
+                <div class="p8-statusbar"><span>9:41</span><span class="p8-sig">●●● ▮▮▮ ⌁</span></div>
+                <div class="p8-ph-kick">Reservá tu turno</div>
+                <div class="p8-ph-title">Barbería · Hoy 18:30</div>
+              </div>
+              <div class="p8-ph-body">
+                <div class="p8-row"><span>Corte + Barba</span><b>$24.000</b></div>
+                <div class="p8-row"><span>Seña <span class="pay-badge">MP</span></span><b>$8.000</b></div>
+                <div class="p8-row"><span>3 cuotas s/interés</span><span class="pay-badge">BNPL</span></div>
+                <div class="p8-cta">Confirmar y pagar seña</div>
+              </div>
             </div>
           </div>
-          <div class="mock-dash" style="flex:1;min-width:270px">
-            <div class="dh"><span class="t">Mi negocio</span><span style="font-size:11px;color:#6b6577">Hoy</span></div>
-            <div class="kpis">
-              <div class="kpi"><div class="v">$186k</div><div class="k">Caja de hoy</div></div>
-              <div class="kpi"><div class="v">94%</div><div class="k">Ocupación</div></div>
-              <div class="kpi"><div class="v">$2,4M</div><div class="k">Disponible</div></div>
+          <figcaption>Para el <b>cliente</b><br>reserva, paga la seña y financia</figcaption>
+        </figure>
+
+        <div class="p8-flow">
+          <div class="ftop">fluye por</div>
+          <div class="p8-track">
+            <div class="node"><b>diV</b></div>
+            <div class="p8-coin">$</div>
+          </div>
+          <div class="p8-pills"><span class="p8-pill">Pagos</span><span class="p8-pill">Datos</span><span class="p8-pill">IA</span></div>
+        </div>
+
+        <figure class="p8-side">
+          <div class="p8-dash">
+            <div class="p8-dh"><span class="t">Mi negocio</span><span class="p8-live"><i></i>EN VIVO</span></div>
+            <div class="p8-kpis">
+              <div class="p8-kpi"><div class="v count" data-to="186" data-prefix="$" data-suffix="k">$186k</div><div class="k">Caja de hoy</div></div>
+              <div class="p8-kpi"><div class="v count" data-to="94" data-suffix="%">94%</div><div class="k">Ocupación</div></div>
+              <div class="p8-kpi"><div class="v">$2,4M</div><div class="k">Disponible</div></div>
             </div>
-            <div class="copilot">
-              <div class="lbl">✦ Copiloto financiero</div>
+            <div class="p8-sparkwrap"><div class="p8-spark"><i style="height:36%"></i><i style="height:50%"></i><i style="height:42%"></i><i style="height:58%"></i><i style="height:47%"></i><i style="height:65%"></i><i style="height:55%"></i><i style="height:70%"></i><i style="height:60%"></i><i style="height:78%"></i><i style="height:68%"></i><i style="height:84%"></i><i style="height:75%"></i><i style="height:93%"></i></div><span class="p8-sparklbl">Caja · 14 días</span></div>
+            <div class="p8-copilot">
+              <div class="lbl"><span class="av">✦</span> Copiloto financiero</div>
               <div class="q">¿Puedo retirar $500.000 esta semana?</div>
-              <div class="a">Sí. Proyecto $980k de caja con 87% de confianza. Te quedás cubierto incluso si caen 2 turnos.</div>
+              <div class="a">Sí. Proyecto <b>$980k</b> de caja. Quedás cubierto incluso si caen 2 turnos.<span class="conf">◍ 87% de confianza</span></div>
             </div>
           </div>
-        </div>
-        <div class="anim" style="display:flex;flex-direction:column;gap:16px">
-          <div class="card" style="padding:24px 26px"><span class="ico">🙋</span><h3>Para el cliente</h3><p>Reserva, paga la seña y financia en cuotas. Sin fricción.</p></div>
-          <div class="card" style="padding:24px 26px"><span class="ico">💈</span><h3>Para el dueño</h3><p>Ve su caja real, cobra y accede a capital en 1 tap.</p></div>
-        </div>
+          <figcaption>Para el <b>dueño</b><br>cobra, decide y accede a capital</figcaption>
+        </figure>
+
       </div>
     </div>
     <div class="foot">08 · Product</div>
