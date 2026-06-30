@@ -374,9 +374,10 @@
     box-shadow:0 14px 28px -10px rgba(10,92,41,.7)}
 
   /* --- capa diVenuo: flujo en el medio --- */
-  .p8-flow{display:flex;flex-direction:column;align-items:center;gap:16px;width:clamp(116px,12vw,168px);align-self:center}
-  .p8-flow .ftop{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2)}
-  .p8-track{position:relative;width:100%;height:2px;border-radius:2px;
+  .p8-flow{display:flex;flex-direction:column;align-items:center;gap:12px;width:clamp(116px,12vw,168px);align-self:center}
+  .p8-flow .ftop{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+  .p8-track{position:relative;width:100%;height:62px}
+  .p8-track::before{content:"";position:absolute;top:50%;left:0;right:0;height:2px;border-radius:2px;transform:translateY(-50%);
     background:linear-gradient(90deg,rgba(217,180,74,0),rgba(217,180,74,.55),rgba(217,180,74,0))}
   .p8-track .node{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;
     background:radial-gradient(circle at 32% 28%,var(--ink-4),var(--ink));border:1px solid rgba(217,180,74,.55);
