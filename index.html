@@ -357,10 +357,11 @@
     box-shadow:0 54px 110px -36px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.05),inset 0 0 0 2px rgba(255,255,255,.03)}
   .p8-phone .island{position:absolute;top:21px;left:50%;transform:translateX(-50%);width:84px;height:21px;background:#000;border-radius:999px;z-index:6}
   .p8-screen{background:var(--cream);border-radius:34px;overflow:hidden;position:relative}
-  .p8-screen::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:7;
-    background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.55) 50%,transparent 58%);background-size:280% 100%;background-position:210% 0}
-  .slide.active .p8-screen::after{animation:p8sweep 5.5s ease-in-out 1s infinite}
-  @keyframes p8sweep{0%{background-position:210% 0}22%,100%{background-position:-120% 0}}
+  .p8-screen::after{content:"";position:absolute;top:-12%;bottom:-12%;width:55%;left:-75%;pointer-events:none;z-index:7;
+    transform:skewX(-14deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent)}
+  .slide.active .p8-screen::after{animation:p8sweep 6.5s ease-in-out 1.2s infinite}
+  /* cruza una sola vez y descansa FUERA de pantalla (no tapa el texto en reposo) */
+  @keyframes p8sweep{0%{left:-75%}15%{left:175%}100%{left:175%}}
   .p8-ph-top{background:linear-gradient(165deg,#0c6e31,#083f1d);color:#fff;padding:30px 20px 22px}
   .p8-statusbar{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:700;opacity:.92;margin-bottom:18px}
   .p8-statusbar .p8-sig{letter-spacing:1px;font-size:9px}
@@ -429,12 +430,12 @@
   #finale{overflow:hidden}
   .finale-raysw{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0;transform:scale(.55)}
   #finale.slide.active .finale-raysw{animation:f-raysin 1.5s ease-out .08s forwards}
-  @keyframes f-raysin{to{opacity:.75;transform:scale(1)}}
+  @keyframes f-raysin{to{opacity:1;transform:scale(1)}}
   .finale-rays{position:absolute;left:50%;top:45%;width:160vmax;height:160vmax;transform:translate(-50%,-50%);
-    background:repeating-conic-gradient(from 0deg at 50% 50%, rgba(217,180,74,.07) 0deg 1.6deg, transparent 1.6deg 15deg);
-    -webkit-mask:radial-gradient(circle at 50% 50%, transparent 14%, #000 26%, rgba(0,0,0,.45) 42%, transparent 56%);
-            mask:radial-gradient(circle at 50% 50%, transparent 14%, #000 26%, rgba(0,0,0,.45) 42%, transparent 56%)}
-  #finale.slide.active .finale-rays{animation:f-rayspin 46s linear infinite}
+    background:repeating-conic-gradient(from 0deg at 50% 50%, rgba(217,180,74,.14) 0deg 3deg, transparent 3deg 11deg);
+    -webkit-mask:radial-gradient(circle at 50% 50%, transparent 12%, #000 23%, #000 49%, transparent 70%);
+            mask:radial-gradient(circle at 50% 50%, transparent 12%, #000 23%, #000 49%, transparent 70%)}
+  #finale.slide.active .finale-rays{animation:f-rayspin 140s linear infinite}
   @keyframes f-rayspin{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
   .finale-burst{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;
     background:radial-gradient(circle at 50% 45%, rgba(255,248,186,.6), rgba(255,248,186,.12) 20%, transparent 42%)}
