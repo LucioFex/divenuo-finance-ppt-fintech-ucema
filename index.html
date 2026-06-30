@@ -429,11 +429,11 @@
   #finale{overflow:hidden}
   .finale-raysw{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0;transform:scale(.55)}
   #finale.slide.active .finale-raysw{animation:f-raysin 1.5s ease-out .08s forwards}
-  @keyframes f-raysin{to{opacity:1;transform:scale(1)}}
+  @keyframes f-raysin{to{opacity:.75;transform:scale(1)}}
   .finale-rays{position:absolute;left:50%;top:45%;width:160vmax;height:160vmax;transform:translate(-50%,-50%);
-    background:repeating-conic-gradient(from 0deg at 50% 50%, rgba(217,180,74,.14) 0deg 3deg, transparent 3deg 11deg);
-    -webkit-mask:radial-gradient(circle at 50% 50%, transparent 12%, #000 23%, #000 49%, transparent 70%);
-            mask:radial-gradient(circle at 50% 50%, transparent 12%, #000 23%, #000 49%, transparent 70%)}
+    background:repeating-conic-gradient(from 0deg at 50% 50%, rgba(217,180,74,.07) 0deg 1.6deg, transparent 1.6deg 15deg);
+    -webkit-mask:radial-gradient(circle at 50% 50%, transparent 14%, #000 26%, rgba(0,0,0,.45) 42%, transparent 56%);
+            mask:radial-gradient(circle at 50% 50%, transparent 14%, #000 26%, rgba(0,0,0,.45) 42%, transparent 56%)}
   #finale.slide.active .finale-rays{animation:f-rayspin 46s linear infinite}
   @keyframes f-rayspin{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
   .finale-burst{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;
